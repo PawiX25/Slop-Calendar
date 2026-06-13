@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pure-Compose app: this XML theme only removes the action bar, makes system
+         bars transparent for edge-to-edge, and sets a neutral window background that
+         follows day/night via @color/window_background. All real theming is done by
+         MaterialExpressiveTheme in Compose. -->
+    <style name="Theme.CalendarTimeline" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+</resources>

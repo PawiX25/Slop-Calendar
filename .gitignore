@@ -1,0 +1,32 @@
+# Built output
+build/
+captures/
+*.apk
+*.aab
+
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android Studio / IntelliJ
+*.iml
+.idea/
+.kotlin/
+
+# Machine-specific
+local.properties
+
+# Native build
+.externalNativeBuild/
+.cxx/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-local scratch (screenshots, logs, inspection dumps)
+/build_log.txt
+/ref.png
+/shot_*.png
+/_ginspect/
+/_glance_inspect/
