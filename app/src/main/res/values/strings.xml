@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Slop Calendar</string>
     <string name="widget_label">Slop Calendar</string>
-    <string name="widget_description">Nadchodzące wydarzenia z Twoich kalendarzy w stylu Material 3 Expressive.</string>
+    <string name="widget_description">Nadchodzące wydarzenia z Twoich kalendarzy</string>
 
     <string name="calendars_title">Kalendarze</string>
     <string name="calendars_subtitle">Wybierz, które kalendarze pokazywać na widgecie.</string>
@@ -13,7 +13,7 @@
     <string name="clear_all">Odznacz wszystkie</string>
     <string name="add_widget_title">Dodaj widget</string>
     <string name="add_widget_subtitle">Oś czasu Twojego kalendarza</string>
-    <string name="add_widget_desc">Umieść kalendarz na ekranie głównym — dotknij przycisku poniżej albo przeciągnij go z listy widżetów.</string>
+    <string name="add_widget_desc">Naciśnij przycisk poniżej, aby dodać widget.</string>
     <string name="add_widget_button">Dodaj do ekranu głównego</string>
     <string name="add_widget_hint">Przytrzymaj ekran główny → Widżety → „Slop Calendar”, aby dodać widget.</string>
     <string name="refresh">Odśwież</string>
