@@ -161,9 +161,11 @@ private fun CalendarContent(
             top = contentPadding.calculateTopPadding() + 4.dp,
             bottom = contentPadding.calculateBottomPadding() + 24.dp,
         ),
-        verticalArrangement = Arrangement.spacedBy(12.dp),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
         item { WidgetHintCard(onAddWidget = onAddWidget) }
+
+        item { Spacer(modifier = Modifier.height(2.dp)) }
 
         item {
             Row(
@@ -179,14 +181,6 @@ private fun CalendarContent(
                 TextButton(onClick = onSelectAll) { Text(stringResource(R.string.select_all)) }
                 TextButton(onClick = onClearAll) { Text(stringResource(R.string.clear_all)) }
             }
-        }
-
-        item {
-            Text(
-                text = stringResource(R.string.calendars_subtitle),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
         }
 
         if (calendars.isEmpty()) {
