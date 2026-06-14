@@ -73,8 +73,8 @@ private fun WidgetRoot(hasPermission: Boolean, days: List<AgendaDay>) {
         modifier = GlanceModifier
             .fillMaxSize()
             .background(GlanceTheme.colors.widgetBackground)
-            .cornerRadius(28.dp)
-            .padding(horizontal = 16.dp, vertical = 14.dp),
+//            .padding(horizontal = 16.dp, vertical = 14.dp),
+        .padding(top = 14.dp),
     ) {
         Header()
         Spacer(GlanceModifier.height(10.dp))
@@ -89,7 +89,7 @@ private fun WidgetRoot(hasPermission: Boolean, days: List<AgendaDay>) {
 @Composable
 private fun Header() {
     Row(
-        modifier = GlanceModifier.fillMaxWidth(),
+        modifier = GlanceModifier.fillMaxWidth().padding(horizontal = 16.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Text(
@@ -134,13 +134,16 @@ private fun AgendaList(days: List<AgendaDay>) {
         items(days, itemId = { it.dayStartMillis }) { day ->
             DayRow(day)
         }
+        item {
+            Spacer(modifier = GlanceModifier.height(14.dp))
+        }
     }
 }
 
 @Composable
 private fun DayRow(day: AgendaDay) {
     Row(
-        modifier = GlanceModifier.fillMaxWidth().padding(vertical = 5.dp),
+        modifier = GlanceModifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 5.dp),
         verticalAlignment = Alignment.Top,
     ) {
         DateCell(day.dayStartMillis)
