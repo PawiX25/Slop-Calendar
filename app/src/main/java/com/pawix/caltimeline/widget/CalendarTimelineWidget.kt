@@ -73,7 +73,6 @@ private fun WidgetRoot(hasPermission: Boolean, days: List<AgendaDay>) {
         modifier = GlanceModifier
             .fillMaxSize()
             .background(GlanceTheme.colors.widgetBackground)
-//            .padding(horizontal = 16.dp, vertical = 14.dp),
         .padding(top = 14.dp),
     ) {
         Header()
@@ -95,8 +94,7 @@ private fun Header() {
         Text(
             text = DateLabels.monthTitle(),
             modifier = GlanceModifier
-                .defaultWeight()
-                .clickable(actionStartActivity<MainActivity>()),
+                .defaultWeight(),
             style = TextStyle(
                 color = GlanceTheme.colors.onSurface,
                 fontSize = 22.sp,
