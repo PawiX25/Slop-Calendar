@@ -73,7 +73,8 @@ private fun WidgetRoot(hasPermission: Boolean, days: List<AgendaDay>) {
         modifier = GlanceModifier
             .fillMaxSize()
             .background(GlanceTheme.colors.widgetBackground)
-        .padding(top = 14.dp),
+            .cornerRadius(24.dp)
+            .padding(top = 14.dp),
     ) {
         Header()
         Spacer(GlanceModifier.height(10.dp))
