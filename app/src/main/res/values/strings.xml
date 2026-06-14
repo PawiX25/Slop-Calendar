@@ -2,25 +2,25 @@
 <resources>
     <string name="app_name">Slop Calendar</string>
     <string name="widget_label">Slop Calendar</string>
-    <string name="widget_description">Nadchodzące wydarzenia z Twoich kalendarzy</string>
+    <string name="widget_description">Upcoming events form your calendars</string>
 
-    <string name="calendars_title">Kalendarze</string>
-    <string name="calendars_subtitle">Wybierz, które kalendarze pokazywać na widgecie.</string>
-    <string name="grant_permission">Zezwól na dostęp do kalendarza</string>
-    <string name="permission_rationale">Aby pokazać Twoją oś czasu, aplikacja potrzebuje dostępu do kalendarza systemowego.</string>
-    <string name="no_calendars">Nie znaleziono żadnych kalendarzy na tym urządzeniu.</string>
-    <string name="select_all">Zaznacz wszystkie</string>
-    <string name="clear_all">Odznacz wszystkie</string>
-    <string name="add_widget_title">Dodaj widget</string>
-    <string name="add_widget_subtitle">Oś czasu Twojego kalendarza</string>
-    <string name="add_widget_desc">Naciśnij przycisk poniżej, aby dodać widget.</string>
-    <string name="add_widget_button">Dodaj do ekranu głównego</string>
-    <string name="add_widget_hint">Przytrzymaj ekran główny → Widżety → „Slop Calendar”, aby dodać widget.</string>
-    <string name="refresh">Odśwież</string>
+    <string name="calendars_title">Calendars</string>
+    <string name="calendars_subtitle">Choose which calendars to show in the widget.</string>
+    <string name="grant_permission">Grant calendar access</string>
+    <string name="permission_rationale">To display your timeline, the app needs access to the system calendar.</string>
+    <string name="no_calendars">No calendars were found on this device.</string>
+    <string name="select_all">Select all</string>
+    <string name="clear_all">Clear all</string>
+    <string name="add_widget_title">Add widget</string>
+    <string name="add_widget_subtitle">Your calendar timeline</string>
+    <string name="add_widget_desc">Press the button below to add the widget.</string>
+    <string name="add_widget_button">Add to Home screen</string>
+    <string name="add_widget_manual">Your launcher doesn\'t support automatic widget placement. Please add the Slop Calendar widget manually.</string>
+    <string name="refresh">Refresh</string>
 
     <!-- Widget runtime strings -->
-    <string name="widget_no_events">Brak nadchodzących wydarzeń</string>
-    <string name="widget_grant_cta">Dotknij, aby włączyć dostęp do kalendarza</string>
-    <string name="widget_all_day">Cały dzień</string>
-    <string name="add_event">Dodaj wydarzenie</string>
+    <string name="widget_no_events">No upcoming events</string>
+    <string name="widget_grant_cta">Tap to enable calendar access</string>
+    <string name="widget_all_day">All day</string>
+    <string name="add_event">Add event</string>
 </resources>

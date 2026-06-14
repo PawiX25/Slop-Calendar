@@ -58,6 +58,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.glance.appwidget.updateAll
@@ -266,6 +267,8 @@ private fun CalendarRow(
 
 @Composable
 private fun WidgetHintCard(onAddWidget: () -> Unit) {
+    val pinSupported = rememberPinWidgetSupported()
+
     ElevatedCard(shape = RoundedCornerShape(28.dp), modifier = Modifier.fillMaxWidth()) {
         Column(modifier = Modifier.padding(20.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -297,20 +300,28 @@ private fun WidgetHintCard(onAddWidget: () -> Unit) {
                 }
             }
             Spacer(Modifier.height(16.dp))
-            Text(
-                text = stringResource(R.string.add_widget_desc),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-            Spacer(Modifier.height(18.dp))
-            Button(
-                onClick = onAddWidget,
-                modifier = Modifier.fillMaxWidth(),
-                contentPadding = PaddingValues(vertical = 14.dp),
-            ) {
-                Icon(Icons.Rounded.AddToHomeScreen, contentDescription = null)
-                Spacer(Modifier.width(8.dp))
-                Text(stringResource(R.string.add_widget_button))
+            if (pinSupported) {
+                Text(
+                    text = stringResource(R.string.add_widget_desc),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                Spacer(Modifier.height(18.dp))
+                Button(
+                    onClick = onAddWidget,
+                    modifier = Modifier.fillMaxWidth(),
+                    contentPadding = PaddingValues(vertical = 14.dp),
+                ) {
+                    Icon(Icons.Rounded.AddToHomeScreen, contentDescription = null)
+                    Spacer(Modifier.width(8.dp))
+                    Text(stringResource(R.string.add_widget_button))
+                }
+            } else {
+                Text(
+                    text = stringResource(R.string.add_widget_manual),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
             }
         }
     }
@@ -342,6 +353,7 @@ private fun PermissionContent(modifier: Modifier = Modifier, onGrant: () -> Unit
             text = stringResource(R.string.permission_rationale),
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
+            textAlign = TextAlign.Center
         )
         Spacer(Modifier.height(24.dp))
         Button(onClick = onGrant) {
@@ -353,16 +365,20 @@ private fun PermissionContent(modifier: Modifier = Modifier, onGrant: () -> Unit
 private fun colorOrDefault(argb: Int): Color =
     if (argb == 0) Color(0xFF5A8A3C) else Color(argb)
 
+@Composable
+fun rememberPinWidgetSupported(): Boolean {
+    val context = LocalContext.current.applicationContext
+
+    return remember {
+        val manager = context.getSystemService(AppWidgetManager::class.java)
+        manager?.isRequestPinAppWidgetSupported == true
+    }
+}
+
 private fun requestPinWidget(context: android.content.Context) {
-    val manager = context.getSystemService(AppWidgetManager::class.java)
+    val manager = context.getSystemService(AppWidgetManager::class.java) ?: return
     val provider = ComponentName(context, CalendarTimelineReceiver::class.java)
-    if (manager != null && manager.isRequestPinAppWidgetSupported) {
+    if (manager.isRequestPinAppWidgetSupported) {
         manager.requestPinAppWidget(provider, null, null)
-    } else {
-        Toast.makeText(
-            context,
-            context.getString(R.string.add_widget_hint),
-            Toast.LENGTH_LONG,
-        ).show()
     }
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Slop Calendar</string>
+    <string name="widget_label">Slop Calendar</string>
+    <string name="widget_description">Nadchodzące wydarzenia z Twoich kalendarzy</string>
+
+    <string name="calendars_title">Kalendarze</string>
+    <string name="calendars_subtitle">Wybierz, które kalendarze pokazywać na widgecie.</string>
+    <string name="grant_permission">Zezwól na dostęp do kalendarza</string>
+    <string name="permission_rationale">Aby pokazać Twoją oś czasu, aplikacja potrzebuje dostępu do kalendarza systemowego.</string>
+    <string name="no_calendars">Nie znaleziono żadnych kalendarzy na tym urządzeniu.</string>
+    <string name="select_all">Zaznacz wszystkie</string>
+    <string name="clear_all">Odznacz wszystkie</string>
+    <string name="add_widget_title">Dodaj widget</string>
+    <string name="add_widget_subtitle">Oś czasu Twojego kalendarza</string>
+    <string name="add_widget_desc">Naciśnij przycisk poniżej, aby dodać widget.</string>
+    <string name="add_widget_button">Dodaj do ekranu głównego</string>
+    <string name="add_widget_manual">Twój launcher nie obsługuje automatycznego dodawania widżetów. Dodaj widżet Slop Calendar ręcznie.</string>
+    <string name="refresh">Odśwież</string>
+
+    <!-- Widget runtime strings -->
+    <string name="widget_no_events">Brak nadchodzących wydarzeń</string>
+    <string name="widget_grant_cta">Dotknij, aby włączyć dostęp do kalendarza</string>
+    <string name="widget_all_day">Cały dzień</string>
+    <string name="add_event">Dodaj wydarzenie</string>
+</resources>
